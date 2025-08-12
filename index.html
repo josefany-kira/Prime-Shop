@@ -4,248 +4,112 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prime Shop 🛒 — Grupo · 982 membros</title>
-  <meta name="description" content="Prime Shop — A maior loja de vendas de conta FF. Horário de atendimento, regras e contatos." />  <!-- Theme colors -->  <meta name="theme-color" content="#0b0b0b" />  <!-- Styles (prettified single-file) -->  <style>
-    :root{
-      --bg:#0b0b0b; /* preto */
-      --gold:#d4af37; /* dourado clássico */
-      --muted:#bba86b;
-      --card:#111111;
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
-      --max-width:1100px;
-      --accent-shadow: 0 6px 24px rgba(212,175,55,0.06);
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  <title>Prime Shop 🛒</title>
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --gold: #d4af37;
+      --gold-light: #f5e6b3;
+      --card-bg: rgba(255,255,255,0.03);
+      --radius: 14px;
+      --font: 'Poppins', sans-serif;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background: linear-gradient(180deg,var(--bg) 0%, #070707 100%);
-      color:#eee;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--black);
+      color: white;
+      line-height: 1.5;
+      padding: 0;
+      margin: 0;
     }
-
-    .wrap{
-      width:100%;
-      max-width:var(--max-width);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:18px;
-      box-shadow: var(--accent-shadow);
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:0;
-      border:1px solid rgba(212,175,55,0.08);
+    header {
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      padding: 20px;
+      text-align: center;
+      color: var(--black);
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
-
-    /* Left content */
-    .left{
-      padding:34px 40px;
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
     }
-    header.brand{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      margin-bottom:12px;
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
-    .logo{
-      width:68px;height:68px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg,var(--gold),var(--muted));
-      color:#070707;font-weight:700;font-size:22px;box-shadow:0 6px 20px rgba(0,0,0,0.6);
+    h2 {
+      color: var(--gold);
+      margin-bottom: 10px;
     }
-    h1.title{font-size:20px;margin:0;color:var(--gold)}
-    p.subtitle{margin:0;color:#ddd;opacity:0.9}
-
-    .hero{
-      margin-top:18px;
-      display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--black);
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+      transition: all 0.3s ease;
     }
-    .card{
-      background:var(--card);
-      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    .btn:hover {
+      box-shadow: 0 6px 25px rgba(212,175,55,0.6);
+      transform: translateY(-2px);
     }
-
-    .info{flex:1;min-width:300px}
-    .badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--muted));color:#060606;font-weight:700}
-
-    .rules{margin-top:14px;line-height:1.5}
-    .rules li{margin:10px 0;padding-left:6px}
-
-    .hours{margin-top:14px;display:flex;gap:12px;align-items:center}
-    .hours strong{color:var(--gold)}
-
-    /* Right column */
-    .right{
-      background:linear-gradient(180deg, rgba(212,175,55,0.03), rgba(212,175,55,0.01));
-      padding:26px;border-left:1px solid rgba(255,255,255,0.02);
-      display:flex;flex-direction:column;gap:16px;min-width:280px;align-items:stretch;
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #aaa;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
-
-    .stat{display:flex;justify-content:space-between;align-items:center}
-    .stat strong{color:var(--gold);font-size:18px}
-    .btn{
-      display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(90deg,var(--gold),var(--muted));color:#070707;font-weight:700;text-decoration:none;text-align:center;border:none;cursor:pointer;
-    }
-
-    a.link{color:var(--gold);text-decoration:none}
-
-    footer.small{font-size:12px;color:#bbb;opacity:0.9}
-
-    /* responsive */
-    @media (max-width:900px){
-      .wrap{grid-template-columns:1fr;}
-      .right{order:2}
-    }
-
-    /* micro-interactions */
-    .cta{margin-top:16px}
-    .tiktok{
-      display:flex;gap:10px;align-items:center;padding:10px;border-radius:10px;background:var(--glass);
-    }
-    .gold-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(45deg,var(--gold),var(--muted));display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:#050505}
-
-  </style></head>
+  </style>
+</head>
 <body>
-  <div class="wrap" role="main">
-    <div class="left">
-      <header class="brand">
-        <div class="logo">PS</div>
-        <div>
-          <h1 class="title">Prime Shop 🛒</h1>
-          <p class="subtitle">Grupo · <span id="member-count">982</span> membros</p>
-        </div>
-      </header><section class="hero">
-    <aside class="card info">
-      <p style="margin:0 0 8px 0;font-size:15px;">🔵 <strong>Seja bem-vindo</strong> à maior loja de vendas de conta ff 🛒</p>
-
-      <ul class="rules" aria-live="polite">
-        <li>⚠️ <strong>ATT</strong> — Apenas vendas de conta ff 🛒</li>
-        <li>🔗 Proibido mandar links desnecessários</li>
-        <li>🤐 Proibido palavrões</li>
+  <header>Prime Shop 🛒 — Grupo · 982 membros</header>
+  <div class="container">
+    <div class="card">
+      <h2>Bem-vindo</h2>
+      <p>🔵 Seja bem-vindo à maior loja de vendas de conta FF 🛒</p>
+    </div>
+    <div class="card">
+      <h2>Regras</h2>
+      <ul>
+        <li>⚠️ Apenas vendas de conta FF 🛒</li>
+        <li>Proibido mandar links desnecessários 🔗</li>
+        <li>Proibido palavrões</li>
       </ul>
-
-      <div class="hours">
-        <div>
-          <div style="font-size:13px;color:#ddd">Hora de atendimento</div>
-          <strong>8h35 até às 22h</strong>
-        </div>
-      </div>
-
-      <div class="cta">
-        <a class="btn" href="#comprar">Comprar com @elias.Wtf10</a>
-      </div>
-
-    </aside>
-
-    <aside class="card" style="width:280px">
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="stat"><span>🏅 Desafios</span><strong>Valendo Passe e Dimas</strong></div>
-        <div class="stat"><span>🙂 Confiabilidade</span><strong>100% confiável</strong></div>
-
-        <div style="margin-top:8px">
-          <div style="font-size:13px;color:#ccc">⚠️ Faça apenas compra no</div>
-          <div style="margin-top:6px;font-weight:700;color:var(--gold)">@elias.Wtf10</div>
-        </div>
-
-        <div style="margin-top:8px">
-          <div class="tiktok">
-            <div class="gold-icon">t</div>
-            <div>
-              <div style="font-size:13px;color:#ddd">Link Tik Tok</div>
-              <a class="link" target="_blank" rel="noopener" href="https://www.tiktok.com/@elias.wtf10?_t=ZM-8xc6yAPFoYg&_r=1">https://www.tiktok.com/@elias.wtf10</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </aside>
-  </section>
-
-
-  <section style="margin-top:18px" class="card">
-    <h3 style="margin:0 0 8px 0;color:var(--gold)">Contatos & Pagamentos</h3>
-    <p style="margin:0 0 6px 0">IBAN BAI: <strong>0040000679887/210143</strong></p>
-    <p style="margin:0 0 6px 0">Número express: <strong>940779426</strong></p>
-
-    <div style="margin-top:10px;font-size:13px;color:#ccc">Criado por <strong>+244 937 519 067</strong>, <time datetime="2025-06-30">30/06/2025</time></div>
-  </section>
-
-</div>
-
-<aside class="right">
-  <div class="card" style="display:flex;flex-direction:column;gap:10px">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <div>
-        <div style="font-size:13px;color:#ccc">Grupo</div>
-        <div style="font-weight:700;color:var(--gold)">Prime Shop</div>
-      </div>
-      <div style="text-align:right">
-        <div style="font-size:13px;color:#ccc">Membros</div>
-        <div style="font-weight:700;color:var(--gold)" id="member-count-right">982</div>
-      </div>
     </div>
-
-    <div style="margin-top:4px">
-      <a class="btn" href="#regras">Ver Regras</a>
+    <div class="card">
+      <h2>Horário de Atendimento</h2>
+      <p>8h35 até às 22h</p>
+    </div>
+    <div class="card">
+      <h2>Contato</h2>
+      <p>IBAN BAI: 0040000679887/210143</p>
+      <p>Número express: 940779426</p>
+      <p>Link TikTok: <a class="btn" href="https://www.tiktok.com/@elias.wtf10?_t=ZM-8xc6yAPFoYg&_r=1" target="_blank">Visitar</a></p>
+    </div>
+    <div class="card">
+      <h2>Desafios</h2>
+      <p>🏅 Valendo Passe e Dimas</p>
+      <p>🙂 100% confiável</p>
+      <p>⚠️ Faça apenas compra no @elias.Wtf10 ⚠️</p>
     </div>
   </div>
-
-  <div class="card">
-    <h4 style="margin:0 0 8px 0;color:var(--gold)">Avisos Rápidos</h4>
-    <ul style="margin:0;padding-left:18px;color:#ddd">
-      <li>Somente vendas de contas Free Fire</li>
-      <li>Evite spam de links — será removido</li>
-      <li>Respeite os outros membros</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h4 style="margin:0 0 8px 0;color:var(--gold)">Segurança</h4>
-    <p style="margin:0;color:#ccc;font-size:13px">Ao comprar, confirme sempre o vendedor <strong>@elias.Wtf10</strong>. A equipe não se responsabiliza por transações entre usuários.</p>
-  </div>
-
-  <div class="card">
-    <h4 style="margin:0 0 8px 0;color:var(--gold)">Comprar</h4>
-    <p style="margin:0 0 8px 0;color:#ddd;font-size:13px">Para realizar uma compra contacte o vendedor oficial.</p>
-    <a class="btn" href="tel:+244937519067">Ligar / WhatsApp</a>
-  </div>
-
-  <footer class="small" style="margin-top:auto">Prime Shop — Criado em 30/06/2025 • Página feita para GitHub Pages</footer>
-</aside>
-
-  </div>  <!-- Small JS to set dynamic fields (single-file) -->  <script>
-    (function(){
-      // Caso queira atualizar o número de membros dinamicamente aqui
-      var members = 982;
-      document.getElementById('member-count').textContent = members;
-      document.getElementById('member-count-right').textContent = members;
-
-      // Smooth scroll for internal links
-      document.querySelectorAll('a[href^="#"]').forEach(function(a){
-        a.addEventListener('click', function(e){
-          e.preventDefault();
-          var id = this.getAttribute('href').slice(1);
-          if(!id) return;
-          var el = document.getElementById(id);
-          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-        })
-      });
-
-      // Optional: prompt to copy contact
-      var phoneBtn = document.querySelector('a[href^="tel:"]');
-      if(phoneBtn){
-        phoneBtn.addEventListener('click', function(){
-          try{navigator.clipboard && navigator.clipboard.writeText('+244937519067');}catch(e){}
-        })
-      }
-
-    })();
-  </script></body>
-</html>
+  <footer>
+    Criado por +244 937 519 067, 30/06/2025 — Prime Shop
+  </footer>
+</body>
+  </html>
